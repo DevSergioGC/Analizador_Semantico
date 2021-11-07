@@ -196,6 +196,7 @@ namespace Compiladores_2019
 
 
             string[] reservado = { "inicio", "proceso", "fin", "si", "ver", "mientras", "entero", "cadena" };
+            string[] reservado2 = { "start", "dev", "end", "if", "display", "while", "int", "string" };
 
 
             string exp_numeros = "^[0-9]+$[0-9]?";
@@ -1520,6 +1521,10 @@ namespace Compiladores_2019
        {    
                         
        }
-        
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
