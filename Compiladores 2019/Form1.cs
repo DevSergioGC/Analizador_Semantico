@@ -29,8 +29,9 @@ namespace Compiladores_2019
 
             
             dataGridView1.Rows.Clear();
+            textBox2.Clear();            
             button2.Enabled = false;
-           this. label3.Visible = false;
+            this. label3.Visible = false;
                     
         }
 
@@ -85,8 +86,6 @@ namespace Compiladores_2019
             string comentario = "@";
             string cad_string = "[\"]";
             string texto = textBox1.Text;
-
-
 
             foreach (char letra in texto)
             {
@@ -595,42 +594,12 @@ namespace Compiladores_2019
                   
                    dataGridView2.Rows[x].DefaultCellStyle.BackColor = Color.Pink;
                    contador_error_compilar += 1;
-               }
-           }
+               }                
+            }
 
-            if(contador_error_compilar==0)
-            {
-
-                using (StreamWriter writer = new StreamWriter("C:\\Users\\rozzo\\Desktop\\Código DOOES a C++\\DOOES en C++.txt", false)) 
-
-                   
-
-                for(int x=0; x<pasos_pasar_a_c; x++)
-                {
-                    if(x==0)
-                    {
-                        writer.WriteLine("#include <iostream>");
-                        writer.WriteLine("using namespace std;");
-                        writer.WriteLine("int main() {");
-                        writer.WriteLine("");
-                        writer.WriteLine("");
-                        writer.WriteLine("");
-
-                    }                   
-                      
-                    writer.WriteLine(pasar_a_c[x].ToString());
-
-
-                    if (x == pasos_pasar_a_c-1)
-                    {
-                        writer.WriteLine("");
-                        writer.WriteLine("");
-                        writer.WriteLine("return 0;");
-                        writer.WriteLine("}");
-                       
-                    }
-                }
-               
+            if(contador_error_compilar==0 || contador_error_compilar == 1)
+            {  
+                Generacion_Codigo();
             }
 
         }
@@ -1522,42 +1491,52 @@ namespace Compiladores_2019
                         
        }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        public void Generacion_Codigo()
         {
-
             string[] reservado = { "inicio", "proceso", "fin", "si", "ver", "mientras", "entero", "cadena" };
             string[] reservado2 = { "start", "dev", "end", "if", "display", "while", "int", "string" };
             string codigo_nuevo = null;
-;
+            ;
             if (string.IsNullOrEmpty(textBox1.Text))
             {
 
             }
             else
             {
-                string[] contenido = textBox1.Text.Split(' ', '\n');                
+                string[] contenido = textBox1.Text.Split(' ', '\n');
 
                 for (int i = 0; i < contenido.Length; i++)
                 {
                     for (int j = 0; j < reservado.Length; j++)
                     {
-                        if (contenido[i] == reservado[j])
+                        if (contenido[i].Equals(reservado[j]))
                         {
                             contenido[i] = reservado2[j];
                         }
-                        
-                    }
+                        else if (contenido[i].Equals("#"))
+                        {
+                            contenido[i] = "=";
+                        }
+                        else if (((contenido[i]).Equals(";")) || ((contenido[i]).Equals("\t")))
+                        {
+                            codigo_nuevo += "\n";
+                        }                 
 
-                    if (contenido[i] == ";")
-                    {
-                        codigo_nuevo += "\n";
-                    }
+                    }                   
 
                     codigo_nuevo += contenido[i] + " ";
                 }
             }
 
             textBox2.Text = codigo_nuevo;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {           
         }
     }
 }
