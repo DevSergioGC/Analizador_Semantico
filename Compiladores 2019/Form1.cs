@@ -1525,6 +1525,39 @@ namespace Compiladores_2019
         private void button3_Click_1(object sender, EventArgs e)
         {
 
+            string[] reservado = { "inicio", "proceso", "fin", "si", "ver", "mientras", "entero", "cadena" };
+            string[] reservado2 = { "start", "dev", "end", "if", "display", "while", "int", "string" };
+            string codigo_nuevo = null;
+;
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+
+            }
+            else
+            {
+                string[] contenido = textBox1.Text.Split(' ', '\n');                
+
+                for (int i = 0; i < contenido.Length; i++)
+                {
+                    for (int j = 0; j < reservado.Length; j++)
+                    {
+                        if (contenido[i] == reservado[j])
+                        {
+                            contenido[i] = reservado2[j];
+                        }
+                        
+                    }
+
+                    if (contenido[i] == ";")
+                    {
+                        codigo_nuevo += "\n";
+                    }
+
+                    codigo_nuevo += contenido[i] + " ";
+                }
+            }
+
+            textBox2.Text = codigo_nuevo;
         }
     }
 }
