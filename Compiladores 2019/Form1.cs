@@ -1180,7 +1180,7 @@ namespace Compiladores_2019
            
         }//fin public void estruc_ver_dentro_de_si
 
-       public void estruc_comparacion()
+        public void estruc_comparacion()
        {
            //inicia reconocimento de comparacion
            string existe = "no";
@@ -1321,7 +1321,7 @@ namespace Compiladores_2019
            
        }//finaliza reconocimento de comparacion
 
-       public void estruc_comparacion_mientras()
+        public void estruc_comparacion_mientras()
        {
            //inicia reconocimento de comparacionmientras
            string existe = "no";
@@ -1461,17 +1461,17 @@ namespace Compiladores_2019
 
        }//finaliza reconocimento de comparacion
 
-       private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
        {
 
        }
       
-       private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
        {
                       
        }
 
-       private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
        {    
                         
        }
@@ -1505,7 +1505,11 @@ namespace Compiladores_2019
                         else if (((contenido[i]).Equals(";")) || ((contenido[i]).Equals("\t")))
                         {
                             codigo_nuevo += "\n";
-                        }                 
+                        }
+                        else if ((contenido[i]).Equals("@"))
+                        {
+                            contenido[i] = "//";
+                        }    
 
                     }                   
 

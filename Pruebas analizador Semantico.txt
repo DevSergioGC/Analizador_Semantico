@@ -19,8 +19,9 @@ fin ;
 
 inicio ; 
 
-entero var2 # "Hola" ;
+cadena var2 # "Hola" ;
 entero var3 # 5 ;
 cadena var4 # "Sergio" ;
+@ Hola
 
 fin ;
