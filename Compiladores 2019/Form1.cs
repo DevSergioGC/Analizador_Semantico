@@ -72,6 +72,7 @@ namespace Compiladores_2019
 
         int contar_columas = 1;
         int contar_lineas = 1;
+
         public void Analizar()
         {
             dataGridView1.Rows.Clear();
@@ -166,7 +167,6 @@ namespace Compiladores_2019
 
         }
 
-
         public void AnalizarPalabras()
         {
 
@@ -187,7 +187,6 @@ namespace Compiladores_2019
                    
                 }            
         }
-
 
         char validar_uno_mas = '0';
         public void VerificarLexema()
@@ -604,7 +603,8 @@ namespace Compiladores_2019
 
         }
 
-       int recorrido_sum =0;
+        int recorrido_sum =0;
+
         public void estruc_var_entera()
         {
             
@@ -674,9 +674,9 @@ namespace Compiladores_2019
                 recorrido = recorrido_sum;
             }
             //finaliza reconocimento de declaracion de variable entera
-            } //fin public void estruc_var_numero
+        } //fin public void estruc_var_numero
 
-                 public void estruc_var_enterax()
+        public void estruc_var_enterax()
         {
             
             //inicia reconocimento de declaracion de variable enterax
@@ -792,8 +792,6 @@ namespace Compiladores_2019
 
         }//fin public void estruc_var_cadena
 
-
-
         public void estruc_var_cadenax()
         {
 
@@ -842,9 +840,6 @@ namespace Compiladores_2019
 
         }//fin public void estruc_var_cadenax
 
-
-
-
         public void estruc_ver()
         {
             //inicia reconocimento de ver
@@ -882,8 +877,6 @@ namespace Compiladores_2019
             //finaliza reconocimento de ver
            // recorrido_sum -= 1;
         }//fin public void estruc_ver
-
-
 
         public void estruc_verx()
         {
@@ -973,10 +966,6 @@ namespace Compiladores_2019
              //finaliza reconocimento de si
 
         }//fin public void estruc_si
-
-
-
-
 
         public void estruc_six()
         {
@@ -1086,6 +1075,7 @@ namespace Compiladores_2019
             //finaliza reconocimento de Mientras
 
         }//fin public void estruc_mientras
+
         public void estruc_mientrasx()
         {
             //inicia reconocimento de mientras
@@ -1331,10 +1321,6 @@ namespace Compiladores_2019
            
        }//finaliza reconocimento de comparacion
 
-
-
-
-
        public void estruc_comparacion_mientras()
        {
            //inicia reconocimento de comparacionmientras
@@ -1475,7 +1461,6 @@ namespace Compiladores_2019
 
        }//finaliza reconocimento de comparacion
 
-
        private void Form1_Load(object sender, EventArgs e)
        {
 
@@ -1533,7 +1518,7 @@ namespace Compiladores_2019
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Generacion_Codigo();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
