@@ -25,3 +25,29 @@ cadena var4 # "Sergio" ;
 @ Hola
 
 fin ;
+
+-------------------------------------------------------------------------
+
+inicio ; 
+
+entero var2 # "Hola" ;
+entero var3 # 5 ;
+cadena var4 # "Sergio" ;
+@ Hola
+
+fin ;
+
+----------------------------------------------------------------------
+
+inicio ;
+
+entero var5 # 23 ;
+
+proceso ;
+
+mientras ( 23 == var5 )
+{
+ver "MINICOMPILADOR FUNCIONANDO" ;
+}
+
+fin ;

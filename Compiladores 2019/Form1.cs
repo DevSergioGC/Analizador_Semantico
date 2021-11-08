@@ -596,7 +596,7 @@ namespace Compiladores_2019
                }                
             }
 
-            if(contador_error_compilar==0 || contador_error_compilar == 1)
+            if(contador_error_compilar==0)
             {  
                 Generacion_Codigo();
             }
